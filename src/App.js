@@ -2,6 +2,7 @@ import About from './components/About';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import NavBar from './components/NavBar';
+import Projects from './components/Projects';
 import Skills from './components/Skills';
 import './styles.css';
 import React from 'react';
@@ -18,6 +19,7 @@ const App = () => {
                   <About />
                   <Skills />
                 </div>
+                <Projects />
               </section>
               <Footer />
           </div>
