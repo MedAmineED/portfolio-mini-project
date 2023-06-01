@@ -16,7 +16,7 @@ const Footer = () => {
 
 
         <li>
-            <a href="#" target='_blank' className="icon">
+            <a href="https://www.linkedin.com/in/essid-mohamed-amine-b9b40321a/" target='_blank' className="icon">
                 <FontAwesomeIcon icon="fa-brands fa-linkedin" /> 
                 Linkedin
             </a>
@@ -30,21 +30,21 @@ const Footer = () => {
         </li>
 
         <li>
-                <a href="#" target='_blank' className="icon">
+                <a href="https://www.facebook.com/" target='_blank' className="icon">
                     <FontAwesomeIcon icon="fa-brands fa-facebook" />
                     Facebook
                 </a>
         </li>
 
         <li>
-                <a href="#" target='_blank' className="icon">
+                <a href="https://twitter.com/" target='_blank' className="icon">
                     <FontAwesomeIcon icon="fa-brands fa-twitter" />
                     Twitter
                 </a>
         </li>
 
         <li>
-                <a href="#" target='_blank' className="icon">
+                <a href="https://www.instagram.com/" target='_blank' className="icon">
                     <FontAwesomeIcon icon="fa-brands fa-instagram" />
                      Instagram
                 </a>
