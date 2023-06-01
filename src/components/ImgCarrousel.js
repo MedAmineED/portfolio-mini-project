@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 
 const ImgCarrousel = ({ carrouselEl }) => {
     const [carrouselPosition, setCarrouselPosition] = useState(0)
+    const [imgNum, setImgNum] = useState(0)
 
 
     const handleClick = (e)=> {
@@ -12,14 +13,18 @@ const ImgCarrousel = ({ carrouselEl }) => {
         const sliderBarLength = imgLength * carrouselEl.length
 
         let newPos = right? carrouselPosition - imgLength : carrouselPosition + imgLength
+        let newImgNum = right? imgNum + 1 : imgNum - 1
 
         if(Math.abs(newPos) >= sliderBarLength){
             newPos = 0
+            newImgNum = 0
         }
         else if(newPos > 0) {
             newPos = - sliderBarLength + imgLength
+            newImgNum = carrouselEl.length - 1
         }
         setCarrouselPosition(newPos)
+        setImgNum(newImgNum)
     }
 
     
@@ -46,7 +51,7 @@ const ImgCarrousel = ({ carrouselEl }) => {
                     onClick={(e)=>{handleClick(e)}}> {'<'} </button>
             <div className='pos'>
                 {carrouselEl.map((el, index)=> {
-                    return <div className='ch-pos' key={`ch-pos-${index}`}></div>
+                    return <div className= {`ch-pos ${imgNum === index? "isActiveImg" : null}`} key={`ch-pos-${index}`}></div>
                 })}
             </div>
             <button
