@@ -7,7 +7,7 @@ const NavBar = () => {
   const scrollPos = useScrollPosition()
   const [prevScroll, setPrevsroll] = useState(0)
   const [scrollDirection, setScrollDirection] = useState("toTop")
-  const { setContactIsOpen, contactIsOpen, Toggle, } = useConsumerOpenContact();
+  const {  Toggle, } = useConsumerOpenContact();
 
   useEffect(()=> {
     if(scrollPos > 80 && scrollPos - prevScroll > 0){
@@ -22,7 +22,6 @@ const NavBar = () => {
 
   const handleContactClick = ()=> {
     Toggle("open")
-    console.log(contactIsOpen)
   }
 
   return (

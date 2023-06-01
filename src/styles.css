@@ -147,6 +147,7 @@ body {
     padding: 40px;
     box-shadow: 0px 0px 8px 3px rgb(146 118 233 / 5%);
     border-radius: 20px;
+    transition: 0.5s ease;
 }
 .panel h2 {
     color: var(--bgColor);
@@ -264,18 +265,18 @@ body {
 
 .contact-section {
     position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     backdrop-filter: blur(3px);
     background-color: #a8a1fb38;
     width: 100%;
     height: 100vh;
     z-index: 9999;
+    transition: 0.5s ease;
 }
 .contact-form {
     background-color: rgba(31, 31, 56, 0.897);
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     height: 80vh;
 }
 .contact-form form {
@@ -292,11 +293,27 @@ body {
     flex-direction: column;
     max-width: 100%;
     min-width: 100%;
+    
+}
+.form-input input, .form-input textarea {
+    color: rgb(105 239 253);
+    background-color: #a8a1fb14;
+    border: none;
+    border-bottom: 2px solid white;
+    padding: 0 10px;
+    height: 25px;
+    border-radius: 20px;
+    outline: none;
+    transition: 0.18s linear;
+}
+.form-input input:focus, .form-input textarea:focus{
+    border-color: rgb(105 239 253);
+    background-color: transparent;
 }
 .contact-form textarea {
     width: 100% !important;
-    max-height: 50px;
-    min-height: 50px;
+    max-height: 65px;
+    min-height: 65px;
 }
 .form-btns {
     display: flex !important;
@@ -315,7 +332,7 @@ body {
 }
 .send-btn {
     background-color: #2a9f94;
-    border-color: #2a9f47;
+    border-color: var(--txtColor);
     color: white;
 }
 .send-btn:hover {
