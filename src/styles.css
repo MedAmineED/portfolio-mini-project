@@ -236,6 +236,7 @@ body {
     border-radius: 50%;
     border: 2px solid var(--txtColor);
     transition: var(--carrouselTransition);
+    cursor: pointer;
 }
 .isActiveImg{
     background-color: var(--txtColor);
@@ -245,8 +246,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 20px;
-    height: 20px;
+    width: 40px;
+    height: 40px;
     border: 2px solid var(--txtColor);
     border-radius: 20px;
     cursor: pointer;
