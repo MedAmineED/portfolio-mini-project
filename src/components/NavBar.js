@@ -1,10 +1,13 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react'
-import { useScrollPosition } from '../hooks/hooks'
+import { useConsumerOpenContact, useScrollPosition } from '../hooks/hooks'
+import Button from './Button'
 
 const NavBar = () => {
   const scrollPos = useScrollPosition()
   const [prevScroll, setPrevsroll] = useState(0)
   const [scrollDirection, setScrollDirection] = useState("toTop")
+  const { setContactIsOpen, contactIsOpen, Toggle, } = useConsumerOpenContact();
 
   useEffect(()=> {
     if(scrollPos > 80 && scrollPos - prevScroll > 0){
@@ -16,6 +19,11 @@ const NavBar = () => {
       setScrollDirection("toTop")
     }
   }, [scrollPos])
+
+  const handleContactClick = ()=> {
+    Toggle("open")
+    console.log(contactIsOpen)
+  }
 
   return (
     <div 
@@ -29,7 +37,7 @@ const NavBar = () => {
             <li>Skills</li>
             <li>Projects</li>
         </ul>
-        <button className='contact'>Contact</button>
+        <Button onClick={handleContactClick} buttonValue={"Contact"}/>
     </div>
   )
 }

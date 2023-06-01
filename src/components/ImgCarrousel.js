@@ -24,7 +24,6 @@ const ImgCarrousel = ({ carrouselEl }) => {
         const imgLength =  (100 / carrouselEl.length)
         const sliderBarLength = imgLength * carrouselEl.length
 
-        console.log(dir)
 
         let newPos = right? carrouselPosition - imgLength : carrouselPosition + imgLength
         let newImgNum = right? imgNum + 1 : imgNum - 1

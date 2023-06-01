@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { OpenContactPage } from "../contexts/contexts";
 
 const useScrollPosition = () => {
     const [scrollPosition, setScrollPosition] = useState(0);
@@ -16,3 +17,10 @@ const useScrollPosition = () => {
   };
   
 export {  useScrollPosition };
+
+
+export function useConsumerOpenContact() {
+  const opCls = useContext(OpenContactPage)
+
+  return opCls
+}

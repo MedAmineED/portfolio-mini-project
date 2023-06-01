@@ -65,7 +65,7 @@ body {
 .navbar li:hover:before {
     width: 100%;
 }
-.navbar button {
+.btn-button {
     outline: none;
 
     background-color: var(--bgColor);
@@ -258,6 +258,69 @@ body {
     border-color: var(--bgColor);
     color: var(--bgColor);
     box-shadow: 0px -5px 13px 10px rgba(171, 143, 255, 0.05);
+}
+
+
+
+.contact-section {
+    position: fixed;
+    backdrop-filter: blur(3px);
+    background-color: #a8a1fb38;
+    width: 100%;
+    height: 100vh;
+    z-index: 9999;
+}
+.contact-form {
+    background-color: rgba(31, 31, 56, 0.897);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 80vh;
+}
+.contact-form form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: start;
+    gap: 30px;
+
+}
+.form-input {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    min-width: 100%;
+}
+.contact-form textarea {
+    width: 100% !important;
+    max-height: 50px;
+    min-height: 50px;
+}
+.form-btns {
+    display: flex !important;
+    flex-wrap: nowrap;
+    justify-content: end;
+    gap: 18px;
+    width: 100% !important;
+}
+.cancel-btn {
+    background-color: transparent;
+    color: white;
+}
+.cancel-btn:hover{
+    border-color: rgb(255, 0, 64);
+    color: rgb(197, 0, 49);
+}
+.send-btn {
+    background-color: #2a9f94;
+    border-color: #2a9f47;
+    color: white;
+}
+.send-btn:hover {
+    background-color: #2a9f68;
+    border-color: #33da5d;
 }
 #footer .icons{
     margin-top: 150px;
