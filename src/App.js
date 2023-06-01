@@ -20,7 +20,9 @@ const App = () => {
 
           <div id="wrapper">
               <section id="main">
-                <Header name= 'Essid Mohamed Amine' speciality="MERN-STACK developer"/>
+                <Header   
+                    name= 'Essid Mohamed Amine' 
+                    speciality="MERN-STACK developer"/>
                 <div className='flex-container'>
                   <About />
                   <Skills />

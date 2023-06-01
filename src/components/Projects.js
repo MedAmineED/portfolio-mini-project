@@ -28,7 +28,7 @@ const  carrouselData = [
 const Projects = () => {
 
   return (
-    <Panel cls={"prj-panel"} title="PROJECTS" wth={100}>
+    <Panel id="projects-section" cls={"prj-panel"} title="PROJECTS" wth={100}>
        <ImgCarrousel carrouselEl={carrouselData} />
     </Panel>
   )

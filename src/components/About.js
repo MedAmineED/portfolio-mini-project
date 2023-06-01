@@ -3,7 +3,7 @@ import Panel from './Panel'
 
 const About = () => {
   return (
-    <Panel title={"ABOUT"}>
+    <Panel id = "about-section" title={"ABOUT"}>
         <p>
             Welcome to my website! I'm a <span>MERN-STACK 
             developer</span>  with a passion for creating 

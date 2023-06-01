@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable jsx-a11y/anchor-has-content */
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react'
 import { useConsumerOpenContact, useScrollPosition } from '../hooks/hooks'
@@ -31,10 +33,10 @@ const NavBar = () => {
         transform: `translateY(${scrollDirection === "toBottom"? -100 : 0}%)`,
       }}>
         <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>Skills</li>
-            <li>Projects</li>
+            <li><a href='#'>Home</a></li>
+            <li><a href='#about-section'>About</a></li>
+            <li><a href='#skills-section'>Skills</a></li>
+            <li><a href='#projects-section'>Projects</a></li>
         </ul>
         <Button onClick={handleContactClick} buttonValue={"Contact"}/>
     </div>

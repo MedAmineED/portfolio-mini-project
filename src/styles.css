@@ -8,6 +8,9 @@
     text-decoration: none;
 
 }
+html {
+    scroll-behavior: smooth;
+  }
 body {
     background: rgb(31 31 56);
 }

@@ -4,7 +4,7 @@ import Panel from './Panel'
 
 const Skills = () => {
   return (
-    <Panel title={"SKILLS"} >
+    <Panel id="skills-section" title={"SKILLS"} >
     <div className='skills'>
     {/* <Panel wth={100}> */}
         <SkillsBar pgLabel = {"REACT.JS"} pgValue = {80} />
