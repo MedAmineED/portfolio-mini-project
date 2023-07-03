@@ -1,3 +1,5 @@
+
+/* ---GLOBAL---- */
 *{
     box-sizing: border-box;
     list-style: none;
@@ -8,6 +10,7 @@
     text-decoration: none;
 
 }
+
 
 html {
     scroll-behavior: smooth;
@@ -21,6 +24,17 @@ body {
     --bgColor : #a8a1fb;
     --txtColor : white;
     --carrouselTransition : 0.8s ease;
+}
+
+.flex-container{
+    width: 100%;
+    display: grid;
+    grid-gap: 2em;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+.container{
+    width: 100%;
+    padding: 135px var(--paddingLR) 0 var(--paddingLR);
 }
 
 /* ---login admin page --- */
@@ -126,10 +140,7 @@ body {
     box-shadow: 0px -5px 13px 10px rgba(171, 143, 255, 0.05);
     /* border-color: #5cb398; */
 }
-#wrapper{
-    width: 100%;
-    padding: 135px var(--paddingLR) 0 var(--paddingLR);
-}
+
 .main-header{
     position: relative;
     width: 100%;
@@ -137,6 +148,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 100px;
 }
 .react-bg , .node-bg{
     position: absolute;
@@ -174,13 +186,7 @@ body {
     color:  rgb(105 239 253);
 }
 
-.flex-container{
-    width: 100%;
-    margin-top: 100px;
-    display: grid;
-    grid-gap: 2em;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-}
+
 .panel{
     display: flex;
     flex-direction: column;
@@ -305,8 +311,80 @@ body {
     box-shadow: 0px -5px 13px 10px rgba(171, 143, 255, 0.05);
 }
 
+/* ----- blogs page ----- */
 
+.blogs-page {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+}
 
+.blog-container {
+    width: 100%;
+    overflow: hidden;
+}
+.text-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: start;
+    gap: 20px;
+}
+.blog-container .text-content p{
+    display: -webkit-box;
+    -webkit-line-clamp: 7;   /* Limit the paragraph to 3 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.image-content{
+    width: 100%;
+    /* border: 2px solid red; */
+}
+.image-content img {
+    width: 100%;
+    height: 100%;
+}
+
+/*--- Show Blog Page --*/
+.arround img {
+    float:right;
+    width: 50% !important;
+    display:inline-block;
+    margin:10px;
+}
+@media (max-width: 780px){
+    .arround img{
+        float: none;
+        width: 100% !important;
+        margin: 0;
+        margin-bottom: 24px;
+        display: block;
+    }
+}
+.comments-panel{
+    width: 100%;
+}
+.comment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+.comment-input {
+    height: 100px !important;
+    max-width: 100%;
+    min-width: 100%;
+}
+
+.comment-btn {
+    align-self: flex-end;
+}
+
+/* ---- contact ----- */
 .contact-section {
     position: fixed;
     display: flex;
@@ -332,14 +410,15 @@ body {
     gap: 30px;
 
 }
-.form-input {
+.input-block {
     display: flex;
     flex-direction: column;
+    gap: 10px;
     max-width: 100%;
     min-width: 100%;
     
 }
-.form-input input, .form-input textarea {
+.input-block input, .input-block textarea {
     color: rgb(105 239 253);
     background-color: #a8a1fb14;
     border: none;
@@ -350,7 +429,7 @@ body {
     outline: none;
     transition: 0.18s linear;
 }
-.form-input input:focus, .form-input textarea:focus{
+.input-block input:focus, .input-block textarea:focus{
     border-color: rgb(105 239 253);
     background-color: transparent;
 }

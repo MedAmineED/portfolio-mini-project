@@ -8,6 +8,8 @@ import Projects from '../components/Projects';
 import Skills from '../components/Skills';
 import OpenContactModal from '../contexts/OpenContactModal';
 import  axios  from 'axios'
+import  Container  from '../components/Container';
+import Row from '../components/Row';
 
 
 
@@ -34,26 +36,16 @@ const HomePage = () => {
         })
     }, [])
   return (
-    <div>
-      <OpenContactModal>
-          <NavBar />
-          <Contact />
-      </OpenContactModal>
-
-          <div id="wrapper">
-              <section id="main">
-                <Header   
-                    name= {adminData.adminName} 
-                    speciality={adminData.adminTitle}/>
-                <div className='flex-container'>
-                  <About aboutText={adminData.aboutText}/>
-                  <Skills />
-                </div>
-                <Projects />
-              </section>
-              <Footer />
-          </div>
-    </div>
+          <section id="main">
+            <Header   
+                name= {adminData.adminName} 
+                speciality={adminData.adminTitle}/>
+            <Row id={"#about-section"}>
+              <About aboutText={adminData.aboutText}/>
+              <Skills />
+            </Row>
+            <Projects />
+          </section>
   )
 }
 

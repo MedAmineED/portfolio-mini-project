@@ -14,7 +14,7 @@ const Skills = () => {
     }).catch((err)=>{
       console.log(err)
     })
-  })
+  }, [])
   return (
     <Panel id="skills-section" title={"SKILLS"} >
     <div className='skills'>

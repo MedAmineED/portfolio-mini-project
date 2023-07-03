@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import Panel from './Panel'
 import Button from './Button'
 import { useConsumerOpenContact } from '../hooks/hooks';
+import CustomTextArea from './CustomTextArea';
 
 const Contact = () => {
     const [isOpen, setIsOpen] = useState({ 
@@ -74,7 +75,7 @@ const Contact = () => {
             wth={50} 
             title={"CONTACT"}>
            <form>
-                <div className='form-input'>
+                <div className='input-block'>
                     <label htmlFor='name'>name</label>
                     <input 
                         placeholder='type your name'
@@ -84,7 +85,7 @@ const Contact = () => {
                         id='name' 
                         type='text'/>
                 </div>
-                <div className='form-input'>
+                <div className='input-block'>
                     <label htmlFor='email'>email</label>
                     <input 
                     placeholder='type your email'
@@ -94,19 +95,16 @@ const Contact = () => {
                         id='email' 
                         type='email'/> 
                 </div>
-                <div className='form-input'>
-                    <label htmlFor='message'>message</label>
-                    <textarea 
-                        placeholder='type your message...'
-                        value={inputValues.message}
-                        onChange={(e)=>{handleChange(e)}}
-                        name='message' 
-                        id='message' 
-                        type='text'/>
-                </div>
+                    <CustomTextArea 
+                                value={inputValues.message}
+                                onChange={handleChange}
+                                name='message'
+                                id='message'
+                                placeHolder={'type your message...'}
+                                labelText = "message" />
                <div className='form-btns'>
-                    <Button onClick={handleContactClick} buttonValue={"cancel"} cls='cancel-btn' />
-                    <Button onClick={handleContactClick} buttonValue={"send"} cls='send-btn' />
+                    <Button onClick={handleContactClick} cls='cancel-btn' >{"cancel"}</Button>
+                    <Button onClick={handleContactClick} cls='send-btn' >{"send"}</Button>
                 </div> 
            </form> 
         </Panel>

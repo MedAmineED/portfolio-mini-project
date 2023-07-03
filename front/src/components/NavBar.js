@@ -3,6 +3,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react'
 import { useConsumerOpenContact, useScrollPosition } from '../hooks/hooks'
+import { Link } from 'react-router-dom'
 import Button from './Button'
 
 const NavBar = () => {
@@ -33,12 +34,12 @@ const NavBar = () => {
         transform: `translateY(${scrollDirection === "toBottom"? -100 : 0}%)`,
       }}>
         <ul>
-            <li><a href='#'>Home</a></li>
-            <li><a href='#about-section'>About</a></li>
-            <li><a href='#skills-section'>Skills</a></li>
-            <li><a href='#projects-section'>Projects</a></li>
+            <Link to={"/"}>Home</Link>
+            <Link to={"/#about-section"}>About</Link>
+            <Link to={"/blogs"}>Blogs</Link>
+            <Link to = {"/projects"}>Projects</Link>
         </ul>
-        <Button onClick={handleContactClick} buttonValue={"Contact"}/>
+        <Button onClick={handleContactClick}>{"Contact"}</Button>
     </div>
   )
 }
