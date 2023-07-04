@@ -1,80 +1,44 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Panel from '../components/Panel'
 import RvsA from "../images/1652206018cwSg16pOMP.png"
 import CustomTextArea from '../components/CustomTextArea'
 import Button from '../components/Button'
+import { useParams } from 'react-router'
+import axios from 'axios'
 
 const ShowBlog = () => {
     const containerRef = useRef(null);
+    const [blogContent, setBlogContent] = useState({
+                                                    title : "",
+                                                    contentText : ""
+                                                     })
+    const params = useParams()
+    const id = params.id
+
+    useEffect(()=> {
+        axios.get(`http://localhost:3002/blogs/showBlog/${id}`)
+        .then((res) => {
+          console.log(res.data);
+          setBlogContent({
+            title : res.data.title,
+            contentText : res.data.content
+          })
+        })
+        .catch((err) => {
+          console.log(err.message);
+        });
+    },[])
    
   return (
     <div ref={containerRef} className='show-blog' id='showBlog-id'>
-       <Panel title={"Front-end"}>
+       <Panel title={blogContent.title}>
             <div className='arround'>
                 <img style={{width : "100%"}} src={RvsA}/>
-                <p>
-                njjjjjdc cjnlksc jks
-                njjjjjdc cjnlksc jks
-                njjjjjdc cjnlksc jks
-                njjjjjdc cjnlksc jks
-                njjjjjdc cjnlksc jks
-                njjjjjdc cjnlksc jks
-                njjjjjdc cjnlksc jks
-                njjjjjdc cjnlksc jks
-                njjjjjdc cjnlksc jks
-                njjjjjdc cjnlksc jks
-                njjjjjdc cjnlksc jks
-                njjjjjdc cjnlksc jks
-                njjjjjdc cjnlksc jks
-                njjjjjdc cjnlksc jks
-                njjjjjdc cjnlksc jks
-                njjjjjdc cjnlksc jks
-                njjjjjdc cjnlksc jks
-                njjjjjdc cjnlksc jks
-                njjjjjdc cjnlksc jks
-                njjjjjdc cjnlksc jks
-                njjjjjdc cjnlksc jks
-                njjjjjdc cjnlksc jks
-                njjjjjdc cjnlksc jks
-                njjjjjdc cjnlksc jks
-                njjjjjdc cjnlksc jks
-                njjjjjdc cjnlksc jks
-                njjjjjdc cjnlksc jks
-                njjjjjdc cjnlksc jks
-                njjjjjdc cjnlksc jks
-                njjjjjdc cjnlksc jks
-                njjjjjdc cjnlksc jks
-                njjjjjdc cjnlksc jks
-                njjjjjdc cjnlksc jks
-                njjjjjdc cjnlksc jks
-                njjjjjdc cjnlksc jks
-                njjjjjdc cjnlksc jks
-                njjjjjdc cjnlksc jks
-                njjjjjdc cjnlksc jks
-                njjjjjdc cjnlksc jks
-                njjjjjdc cjnlksc jks
-                njjjjjdc cjnlksc jks
-                njjjjjdc cjnlksc jks
-                njjjjjdc cjnlksc jks
-                njjjjjdc cjnlksc jks
-                njjjjjdc cjnlksc jks
-                njjjjjdc cjnlksc jks
-                njjjjjdc cjnlksc jks
-                njjjjjdc cjnlksc jks
-                njjjjjdc cjnlksc jks
-                njjjjjdc cjnlksc jks
-                njjjjjdc cjnlksc jks
-                njjjjjdc cjnlksc jks
-                njjjjjdc cjnlksc jks
-                njjjjjdc cjnlksc jks
-                njjjjjdc cjnlksc jks
-                njjjjjdc cjnlksc jks
-                njjjjjdc cjnlksc jks
-                njjjjjdc cjnlksc jks
-                njjjjjdc cjnlksc jks
-                njjjjjdc cjnlksc jks
-                njjjjjdc cjnlksc jks
-                </p>
+               { blogContent.contentText.split('\n').map((paragraph, index) =>{
+                                                                return <p key={index}>{paragraph}</p>
+                                                                
+                                                               }
+                                                          )}
             </div>
        <Panel title={"Comments"} cls={"comments-panel"}>
        <form className='comment-form'>

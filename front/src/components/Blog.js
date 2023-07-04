@@ -1,13 +1,16 @@
 /* eslint-disable jsx-a11y/alt-text */
-import React, { useEffect } from 'react'
+import React from 'react'
 import Row from '../components/Row'
 import RvsA from "../images/1652206018cwSg16pOMP.png"
 import Button from './Button'
 import Panel from './Panel'
 import { Link } from 'react-router-dom'
 
-const Blog = ({textContent, title, index}) => {
-  return (
+const Blog = ({textContent, title, index, blogId}) => {
+  const handleClick = (e)=> {
+    console.log("object")
+  }
+  return ( 
     <Panel title={title} cls={"blog-container"}>
     {index % 2 === 0?<Row>
                         <div className='text-content'>
@@ -17,8 +20,8 @@ const Blog = ({textContent, title, index}) => {
                                                                 
                                                                }
                                                           )}
-                            <Button  >
-                              <Link to={"/blogs/show-blog"}>{"read more"}</Link>
+                            <Button onClick={handleClick} >
+                              <Link to={`/blogs/show-blog/${blogId}`}>{"read more"}</Link>
                             </Button>
                         </div>
                         <div className='image-content'>
@@ -38,8 +41,8 @@ const Blog = ({textContent, title, index}) => {
                                                           )}
                                                                 
                                                                 
-                            <Button  >
-                              <Link to={"/blogs/show-blog"}>{"read more"}</Link>
+                            <Button onClick={handleClick} >
+                              <Link to={`/blogs/show-blog/${blogId}`}>{"read more"}</Link>
                             </Button>
                         </div>
                     </Row>}

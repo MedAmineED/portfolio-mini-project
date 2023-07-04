@@ -9,7 +9,7 @@ const BlogsPage = () => {
   useEffect(()=>{
     axios.get('http://localhost:3002/blogs')
     .then((result)=>{
-      setBlogs([...result.data])
+      setBlogs([...result.data.reverse()])
     })
     .catch((err)=> {
       console.log(err)
@@ -34,6 +34,7 @@ const BlogsPage = () => {
                     return  <Blog  key={blog.title + index}
                                 title={blog.title}
                                 index={index}
+                                blogId = {blog.id}
                                 textContent={blog.content}/>
             
                   })

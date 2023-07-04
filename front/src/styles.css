@@ -356,6 +356,9 @@ body {
     display:inline-block;
     margin:10px;
 }
+.arround p {
+    margin-top: 16px;
+}
 @media (max-width: 780px){
     .arround img{
         float: none;

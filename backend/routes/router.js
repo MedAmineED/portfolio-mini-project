@@ -17,6 +17,8 @@ router.get('/skills', skillController.getSkills)
 router.get('/admin', adminController.getAdmin)
 
 router.get('/blogs', blogsController.getBlogs)
+router.post('/blogs', blogsController.postNewBlog)
+router.get('/blogs/showBlog/:id', blogsController.getBlogById)
 
 
 router.post('/addMessage', messageController.postNewMessage)
