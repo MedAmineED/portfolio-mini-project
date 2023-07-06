@@ -8,6 +8,9 @@ const cors = require('cors');
 app.use(express.json());
 app.use(cors());
 
+
+app.use(express.static("uploads"))
+
 // Middleware to parse URL-encoded form bodies
 app.use(express.urlencoded({ extended: true }));
 

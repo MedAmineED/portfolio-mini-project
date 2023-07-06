@@ -1,12 +1,11 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from 'react'
 import Row from '../components/Row'
-import RvsA from "../images/1652206018cwSg16pOMP.png"
 import Button from './Button'
 import Panel from './Panel'
 import { Link } from 'react-router-dom'
 
-const Blog = ({textContent, title, index, blogId}) => {
+const Blog = ({textContent, title, index, blogId, img}) => {
   const handleClick = (e)=> {
     console.log("object")
   }
@@ -15,6 +14,7 @@ const Blog = ({textContent, title, index, blogId}) => {
     {index % 2 === 0?<Row>
                         <div className='text-content'>
                         {textContent.split('\n').map((paragraph, index) =>{
+                                  console.log(index)
                                                                 return index < 2? <p key={index}>{paragraph}</p>
                                                                               : index === 3? <p key={index}>...</p> : null
                                                                 
@@ -25,12 +25,12 @@ const Blog = ({textContent, title, index, blogId}) => {
                             </Button>
                         </div>
                         <div className='image-content'>
-                            <img src={RvsA} />
+                            <img src={img} />
                         </div>
                     </Row>
                     :<Row>
                         <div className='image-content'>
-                            <img src={RvsA} />
+                            <img src={img} />
                         </div>
                         <div className='text-content'>
                         {textContent.split('\n').map((paragraph, index) =>{

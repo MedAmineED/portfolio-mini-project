@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
 import Panel from '../components/Panel'
-import RvsA from "../images/1652206018cwSg16pOMP.png"
 import CustomTextArea from '../components/CustomTextArea'
 import Button from '../components/Button'
 import { useParams } from 'react-router'
@@ -10,7 +9,8 @@ const ShowBlog = () => {
     const containerRef = useRef(null);
     const [blogContent, setBlogContent] = useState({
                                                     title : "",
-                                                    contentText : ""
+                                                    contentText : "",
+                                                    image : ""
                                                      })
     const params = useParams()
     const id = params.id
@@ -21,7 +21,8 @@ const ShowBlog = () => {
           console.log(res.data);
           setBlogContent({
             title : res.data.title,
-            contentText : res.data.content
+            contentText : res.data.content,
+            image : res.data.image
           })
         })
         .catch((err) => {
@@ -33,7 +34,7 @@ const ShowBlog = () => {
     <div ref={containerRef} className='show-blog' id='showBlog-id'>
        <Panel title={blogContent.title}>
             <div className='arround'>
-                <img style={{width : "100%"}} src={RvsA}/>
+                <img style={{width : "100%"}} src={blogContent.image}/>
                { blogContent.contentText.split('\n').map((paragraph, index) =>{
                                                                 return <p key={index}>{paragraph}</p>
                                                                 

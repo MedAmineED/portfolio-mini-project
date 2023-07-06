@@ -28,12 +28,13 @@ const BlogsPage = () => {
                             of web development.
                         </p>
                     </div>
-                </Panel>
+                </Panel> 
                 {
                   blogs.map((blog, index)=> {
                     return  <Blog  key={blog.title + index}
                                 title={blog.title}
                                 index={index}
+                                img={blog.image}
                                 blogId = {blog.id}
                                 textContent={blog.content}/>
             

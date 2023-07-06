@@ -358,7 +358,12 @@ body {
 }
 .arround p {
     margin-top: 16px;
+    white-space: pre-line;
 }
+.text-content{
+    white-space: pre-line;
+  }
+  
 @media (max-width: 780px){
     .arround img{
         float: none;

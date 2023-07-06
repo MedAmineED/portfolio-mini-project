@@ -1,13 +1,16 @@
 const BlogsModel = require('../models/BlogsModel');
 
 class BlogsController {
+
   static async postNewBlog(req, res) {
     const reqBlogs = req.body;
+    const image = `http://localhost:3002/${req.file.filename}`; 
+    console.log("hedhaaa el file : ", req.file.filename)
     console.log(reqBlogs)
     const addNewBlog = new BlogsModel(
                                     reqBlogs.blogTitle,
                                     reqBlogs.blogContent,
-                                    reqBlogs.image
+                                    image
                                     )
         console.log("add Blog", addNewBlog)
 
