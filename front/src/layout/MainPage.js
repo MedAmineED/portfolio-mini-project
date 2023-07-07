@@ -6,12 +6,32 @@ import { Outlet } from 'react-router'
 import Footer from '../components/Footer'
 import Container from '../components/Container'
 
+
+const links = [
+  {
+    link : "/",
+    itemName : "Home"
+  },
+  {
+    link : "/#about-section",
+    itemName : "About"
+  },
+  {
+    link : "/blogs",
+    itemName : "Blogs"
+  },
+  {
+    link : "/projects",
+    itemName : "Projects"
+  },
+]
+
 const MainPage = () => {
   
   return (
     <div>
       <OpenContactModal>
-          <NavBar />
+          <NavBar navLinks={links} contact={true} />
           <Contact />
       </OpenContactModal>
       <Container>

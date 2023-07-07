@@ -74,9 +74,72 @@ body {
 
 
 
+/* ------------ DASHBOARD -------------------- */
+.dashbord-panel{
+    align-items: center !important;
+}
+
+.flex-component{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    gap: 18px;
+}
+
+.profile-item{
+    /* width: 100%; */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 18px;
+    height: 40px;
+}
+
+.icon-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    gap: 25px;
+}
+.icon-ntf {
+    position: relative;
+    cursor: pointer;
+}
+.badge {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    border-radius: 50%;
+    overflow: hidden;
+    max-height: 15px;
+    min-width: 15px;
+    top: -10px;
+    left: 80%;
+    background-color: red;
+    color: white;
+}
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.avatar img {
+    width: 100%;
+}
+.profile-item-menu {
+    cursor: pointer;
+}
 
 
 
+
+/* ------------ portfolio----------------- */
 .navbar {
     display: flex;
     width: 100%;
@@ -166,14 +229,14 @@ body {
     transform: translateX(-100%) rotateZ(30deg);
     left: 100%;
 }
-.avatar {
+.profile-pic {
     width: 300px;
     height: 300px;
     border-radius: 50%;
     overflow: hidden;
     border: 2px solid rgb(105 239 253);
 }
-.avatar img {
+.profile-pic img {
     width: 100%;
 }
 .main-header h1 {

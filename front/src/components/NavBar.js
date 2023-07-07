@@ -5,12 +5,22 @@ import React, { useEffect, useState } from 'react'
 import { useConsumerOpenContact, useScrollPosition } from '../hooks/hooks'
 import { Link } from 'react-router-dom'
 import Button from './Button'
+import ProfileItem from './ProfileItem'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faBell, faMessage } from '@fortawesome/free-solid-svg-icons'
+import IconNtf from './IconNtf'
 
-const NavBar = () => {
+
+
+library.add(faMessage, faBell)
+
+
+
+const NavBar = ({ navLinks, contact, profile }) => {
   const scrollPos = useScrollPosition()
   const [prevScroll, setPrevsroll] = useState(0)
   const [scrollDirection, setScrollDirection] = useState("toTop")
-  const {  Toggle, } = useConsumerOpenContact();
+  const {  Toggle } = useConsumerOpenContact();
 
   useEffect(()=> {
     if(scrollPos > 80 && scrollPos - prevScroll > 0){
@@ -34,12 +44,18 @@ const NavBar = () => {
         transform: `translateY(${scrollDirection === "toBottom"? -100 : 0}%)`,
       }}>
         <ul>
-            <Link to={"/"}>Home</Link>
-            <Link to={"/#about-section"}>About</Link>
-            <Link to={"/blogs"}>Blogs</Link>
-            <Link to = {"/projects"}>Projects</Link>
+          {
+            navLinks.map((link, index)=> {
+              return <Link key={link.itemName + index} to={link.link}>{link.itemName}</Link>
+            })
+          }
         </ul>
-        <Button onClick={handleContactClick}>{"Contact"}</Button>
+          {contact &&  <Button onClick={handleContactClick}>{"Contact"}</Button>}
+          {profile && <div className='icon-container'>
+                          <IconNtf icon={"fa-solid fa-message"} notif={5} />
+                          <IconNtf icon={"fa-solid fa-bell"} notif={10} />
+                      </div> }
+          {profile && <ProfileItem />}
     </div>
   )
 }

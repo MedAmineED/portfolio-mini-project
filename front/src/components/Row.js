@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Row = ({children, id}) => {
+const Row = ({children, id, className}) => {
   return (
-    <div className='flex-container' id={id}>
+    <div className= {`flex-container ${className}`} id={id}>
       {children}
     </div>
   )

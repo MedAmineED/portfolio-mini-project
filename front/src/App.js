@@ -6,11 +6,10 @@ import LoginPage from './layout/loginPage/LoginPage';
 import MainPage from './layout/MainPage';
 import BlogsPage from './layout/BlogsPage';
 import ShowBlog from './layout/ShowBlog';
-import { useScrollToTop } from './hooks/hooks';
+import DashboardHome from './dashboard/DashboardHome';
 
 
 const App = () => {
-  useScrollToTop()
   return (
     <div id='App'>
       <Router>
@@ -21,6 +20,7 @@ const App = () => {
               <Route path='/blogs/show-blog/:id' element= {<ShowBlog />}/>
             </Route>
             <Route path='/loginAdmin' element ={<LoginPage />}  />
+            <Route path='/dashboard' element ={<DashboardHome />}  />
           </Routes>
       </Router>
 
